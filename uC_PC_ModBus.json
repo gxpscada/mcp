@@ -1,0 +1,837 @@
+{
+    "hwDevice":{
+        "model":"",
+        "description":"",
+        "wVersion":"",
+        "swVersion":"",
+        "connection":{
+            "type":"VCP",
+            "baudrate":"115200",
+            "databits":"8",
+            "parity":"none",
+            "stopbit":"1"
+        },
+        "protocoltype":"MODBUSRTU"
+    },
+    "protocol":{
+        "categories":[
+            {
+                "name":"ADC",
+                "tille":"значение АЦП"
+            },
+            {
+                "name":"ANY",
+                "tille":"Везде"
+            },
+            {
+                "name":"DEBUG",
+                "tille":"Отладка"
+            },
+            {
+                "name":"CALC",
+                "tille":"Расчет параметорв в PC"
+            },
+            {
+                "name":"CMD",
+                "tille":"Команда контроллеру"
+            },
+            {
+                "name":"CFG",
+                "tille":"Конфигурация контроллера"
+            },
+            {
+                "name":"FLAG",
+                "tille":"Флаг состояния"
+            },
+            {
+                "name":"HWCONST",
+                "tille":"Аппаратные константы прибора"
+            },
+            {
+                "name":"PROD",
+                "tille":"Работа"
+            },
+            {
+                "name":"TEC",
+                "tille":"Пельтье"
+            },
+            {
+                "name":"TRES",
+                "tille":"Терморезистор"
+            },
+            {
+                "name":"TEMPER",
+                "tille":"Температуры"
+            },
+            {
+                "name":"VALUE",
+                "tille":"Значение в ед."
+            }            
+        ],
+        "datasources":[
+            "INPUTREGISTERS",
+            "DISCRETEINPUTS",
+            "COILS",
+            "HOLDINGREGISTERS"
+        ],
+        "data":{
+            "inputRegisters":[
+                {
+                    "name":"TECVloltVal",
+                    "addr":"0x11",
+                    "count":1,
+                    "title":"TEC Voltage, ADC",
+                    "description":"Напряжение на эл-те Пельтье, ед. АЦП",
+                    "categories":["CALC","VALUE","TEC"]
+                },
+                {
+                    "name":"TECCurrVal",
+                    "addr":"0x12",
+                    "count":1,
+                    "title":"TEC Voltage, ADC",
+                    "description":"Ток на эл-те Пельтье, ед. АЦП",
+                    "categories":["CALC","VALUE","TEC"]
+                },
+                {
+                    "name":"ResVloltVal",
+                    "addr":"0x13",
+                    "count":1,
+                    "title":"TResistor Voltage, mV",
+                    "description":"Напряжение на терморезисторе, мВ",
+                    "categories":["CALC","VALUE","TRES"]
+                },
+                {
+                    "name":"ResCurrVal",
+                    "count":1,
+                    "addr":"0x14",
+                    "title":"TResistor Current, mA",
+                    "description":"Ток через терморезистор, ед. АЦП",
+                    "categories":["CALC","VALUE","TRES"]
+                },
+                {
+                    "name":"T0Val",
+                    "addr":"0x15",
+                    "count":1,
+                    "title":"T0 Deg C value",
+                    "description":"Значение T0, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T1Val",
+                    "addr":"0x16",
+                    "count":1,
+                    "title":"T1 Deg C value",
+                    "description":"Значение T1, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T2Val",
+                    "addr":"0x17",
+                    "count":1,
+                    "title":"T2 Deg C value",
+                    "description":"Значение T2, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T3Val",
+                    "addr":"0x18",
+                    "count":1,
+                    "title":"T3 Deg C value",
+                    "description":"Значение T3, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T4Val",
+                    "addr":"0x19",
+                    "count":1,
+                    "title":"T4 Deg C value",
+                    "description":"Значение T4, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T5Val",
+                    "addr":"0x1A",
+                    "count":1,
+                    "title":"T5 Deg C value",
+                    "description":"Значение T5, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T6Val",
+                    "addr":"0x1B",
+                    "count":1,
+                    "title":"T6 Deg C value",
+                    "description":"Значение T6, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"T7Val",
+                    "addr":"0x1C",
+                    "count":1,
+                    "title":"T7 Deg C value",
+                    "description":"Значение T7, град С",
+                    "categories":["PROD","VALUE","TEMPER"]
+                },
+                {
+                    "name":"ErrorCode",
+                    "addr":"0x1D",
+                    "count":1,
+                    "title":"STM32 Error Code",
+                    "description":"Код ошибки в STM32. 0 == все ОК",
+                    "categories":["ANY","ERROR"]
+                },
+                {
+                    "name":"curRTCValLo",
+                    "addr":"0x1E",
+                    "count":1,
+                    "title":"Current RTC Value (lo)",
+                    "description":"текущее Время по RTC STM32",
+                    "categories":["PROD","ANY","RTC"]
+                },
+                {
+                    "name":"curRTCValHi",
+                    "addr":"0x1F",
+                    "count":1,
+                    "title":"Current RTC Value (hi)",
+                    "description":"текущее Время по RTC STM32",
+                    "categories":["PROD","ANY","RTC"]
+                },
+                {
+                    "name":"T0ADC",
+                    "addr":"0x20",
+                    "count":1,
+                    "title":"T0 ADC value",
+                    "description":"Значение T0, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T1ADC",
+                    "addr":"0x21",
+                    "count":1,
+                    "title":"T1 ADC value",
+                    "description":"Значение T1, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T2ADC",
+                    "addr":"0x22",
+                    "count":1,
+                    "title":"T2 ADC value",
+                    "description":"Значение T2, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T3ADC",
+                    "addr":"0x23",
+                    "count":1,
+                    "title":"T3 ADC value",
+                    "description":"Значение T3, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T4ADC",
+                    "addr":"0x24",
+                    "count":1,
+                    "title":"T4 ADC value",
+                    "description":"Значение T4, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T5ADC",
+                    "addr":"0x25",
+                    "count":1,
+                    "title":"T5 ADC value",
+                    "description":"Значение T5, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T6ADC",
+                    "addr":"0x26",
+                    "count":1,
+                    "title":"T6 ADC value",
+                    "description":"Значение T6, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"T7ADC",
+                    "addr":"0x27",
+                    "count":1,
+                    "title":"T7 ADC value",
+                    "description":"Значение T7, ед. ADC",
+                    "categories":["DEBUG","ADC","TEMPER"]
+                },
+                {
+                    "name":"TECVloltADC",
+                    "addr":"0x28",
+                    "count":1,
+                    "title":"TEC Voltage, ADC",
+                    "description":"Напряжение на эл-те Пельтье, ед. АЦП",
+                    "categories":["DEBUG","ADC","TEC"]
+                },
+                {
+                    "name":"TECCurrADC",
+                    "addr":"0x29",
+                    "count":1,
+                    "title":"TEC Voltage, ADC",
+                    "description":"Ток на эл-те Пельтье, ед. АЦП",
+                    "categories":["DEBUG","ADC","TEC"]
+                },
+                {
+                    "name":"ResVloltADC",
+                    "addr":"0x2A",
+                    "count":1,
+                    "title":"TEC Voltage, ADC",
+                    "description":"Напряжение на терморезисторе, ед. АЦП",
+                    "categories":["DEBUG","ADC","TRES"]
+                },
+                {
+                    "name":"ResCurrADC",
+                    "count":1,
+                    "addr":"0x2B",
+                    "title":"TEC +pin Voltage, ADC",
+                    "description":"Ток через терморезистор, ед. АЦП",
+                    "categories":["DEBUG","ADC","TRES"]
+                },
+                {
+                    "name":"TECVoltPlusADC",
+                    "count":1,
+                    "addr":"0x2C",
+                    "title":"TEC Plus Voltage, ADC",
+                    "description":"Напряжение на + контакте Пельтье, АЦП",
+                    "categories":["DEBUG","ADC","TEC"]
+                },
+                {
+                    "name":"TECVoltMinusADC",
+                    "count":1,
+                    "addr":"0x2D",
+                    "title":"TEC -pin Voltage, ADC",
+                    "description":"Напряжение на - контакте Пельтье, АЦП",
+                    "categories":["DEBUG","ADC","TEC"]
+                },
+                {
+                    "name":"TECVoltInADC",
+                    "count":1,
+                    "addr":"0x2E",
+                    "title":"TEC Ref voltage, ADC",
+                    "description":"Входное напряжение Пельтье. АЦП",
+                    "categories":["DEBUG","ADC","TEC"]
+                },
+                {
+                    "name":"hwcTempChCnt",
+                    "addr":"0x30",
+                    "count":1,
+                    "title":"Temp channels count",
+                    "description":"Кол-во каналов температуры",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcTECMaxSetTemp",
+                    "addr":"0x31",
+                    "count":1,
+                    "title":"TEC MAX Temp",
+                    "description":"Максимальное значение уставки температуры для Пельтье",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcTECMinSetTemp",
+                    "addr":"0x32",
+                    "count":1,
+                    "title":"TEC MIN Temp",
+                    "description":"Минимальное значение уставки температуры для Пельтье",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcRESMaxSetTemp",
+                    "addr":"0x33",
+                    "count":1,
+                    "title":"Thermo Resistor MAX Temp",
+                    "description":"Максимальное значение уставки температуры для терморезистора",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcRESMinSetTemp",
+                    "addr":"0x34",
+                    "count":1,
+                    "title":"Thermo Resistor MIN Temp",
+                    "description":"Минимальное значение уставки температуры для терморезистора",
+                    "categories":["ANY","HWCONST"]
+                },                
+                {
+                    "name":"hwcHWBoardRevision",
+                    "addr":"0x35",
+                    "count":1,
+                    "title":"Version of uC PCB",
+                    "description":"Версия аппаратной реализации платы",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcSWBoardRevision",
+                    "addr":"0x36",
+                    "count":1,
+                    "title":"Version of uC FirmWare",
+                    "description":"Версия прошивки платы",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcProtocolRevision",
+                    "addr":"0x37",
+                    "count":1,
+                    "title":"Version of uC <-> PC Protocol",
+                    "description":"Версия протокола обмена данными",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcPIDMaxValue",
+                    "addr":"0x38",
+                    "count":1,
+                    "title":"MAX PID Value",
+                    "description":"Максимальное значение ПИД",
+                    "categories":["ANY","HWCONST"]
+                },
+                {
+                    "name":"hwcPIDMinValue",
+                    "addr":"0x39",
+                    "count":1,
+                    "title":"MIN PID Value",
+                    "description":"Минимальное значение ПИД",
+                    "categories":["ANY","HWCONST"]
+                }            
+
+            ],
+            "discreteInputs":[
+                {
+                    "name":"flagOverLoad",
+                    "addr":"0x00",
+                    "count":1,
+                    "title":"Overload by current Flag",
+                    "description":"Флаг Перегрузки Пельтье по току",
+                    "categories":["FLAG","ANY","PROD"]
+                },
+                {
+                    "name":"flagOverHeat",
+                    "addr":"0x01",
+                    "count":1,
+                    "title":"OverHeat by temperature Flag",
+                    "description":"Флаг перегрева Пельтье по температуре",
+                    "categories":["FLAG","ANY","PROD"]
+                },
+                {
+                    "name":"flagHeating",
+                    "addr":"0x02",
+                    "count":1,
+                    "title":"TEC heating Flag",
+                    "description":"Нагрев Пельтье",
+                    "categories":["FLAG","ANY","TEC"]
+                },
+                {
+                    "name":"flagCooling",
+                    "addr":"0x03",
+                    "count":1,
+                    "title":"TEC cooling Flag",
+                    "description":"Охлаждение Пельтье",
+                    "categories":["FLAG","ANY","TEC"]
+                },
+                {
+                    "name":"flagRunning",
+                    "addr":"0x04",
+                    "count":1,
+                    "title":"Controller is running Flag",
+                    "description":"МК выполняет программу",
+                    "categories":["FLAG","ANY","CMD"]
+                },
+                {
+                    "name":"flagError",
+                    "addr":"0x05",
+                    "count":1,
+                    "title":"Controller is in ERROR state",
+                    "description":"возникла ошибка в МК",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"flagPIDOverRegulated",
+                    "addr":"0x06",
+                    "count":1,
+                    "title":"PID out value More than Limit",
+                    "description":"Выход ПИД больше ограничения",
+                    "categories":["FLAG","ANY","WARNING"]
+                },
+                {
+                    "name":"flagPIDOverRegulated",
+                    "addr":"0x07",
+                    "count":1,
+                    "title":"PID out value Less than Limit",
+                    "description":"Выход ПИД меньше ограничения",
+                    "categories":["FLAG","ANY","WARNING"]
+                }                
+            ],
+            "coils":[
+                {
+                    "name":"cmdRun",
+                    "addr":"0x00",
+                    "count":1,
+                    "title":"Run Device in runMode",
+                    "description":"Запустить контроллер в RunMode",
+                    "categories":["CMD","PROD"]
+                },
+                {
+                    "name":"cmdFlashCfg",
+                    "addr":"0x01",
+                    "count":1,
+                    "title":"Flash CFG 2 EEPROM",
+                    "description":"Записать конфиг во EEPROM",
+                    "categories":["CMD","CFG"]
+                },
+                {
+                    "name":"cmdCTWrite",
+                    "addr":"0x02",
+                    "count":1,
+                    "title":"Write temp calibration table",
+                    "description":"Записать калибровочную таблицу Датчика температуры в EEPROM",
+                    "categories":["CMD","CFG"]
+                },
+                {
+                    "name":"cmdCTRead",
+                    "addr":"0x03",
+                    "count":1,
+                    "title":"Write temp calibration table",
+                    "description":"Записать калибровочную таблицу Датчика температуры в EEPROM",
+                    "categories":["CMD","CFG"]
+                },
+                {
+                    "name":"cmdDropError",
+                    "addr":"0x04",
+                    "count":1,
+                    "title":"Drop ERROR",
+                    "description":"Сбросить статус ошибки в МК",
+                    "categories":["CMD","CFG"]
+                },
+                {
+                    "name":"setTECHeatMode",
+                    "addr":"0x05",
+                    "count":1,
+                    "title":"TEC Mode",
+                    "description":"Задать нагрев/охлаждение TEC",
+                    "categories":["CMD","PROD"]
+                },
+                {
+                    "name":"cmdWriteEEPROM",
+                    "addr":"0x06",
+                    "count":1,
+                    "title":"Write EEPROM",
+                    "description":"Записать значение в EEPROM",
+                    "categories":["CMD","DEBUG"]
+                },
+                {
+                    "name":"cmdReadEEPROM",
+                    "addr":"0x07",
+                    "count":1,
+                    "title":"Read EEPROM",
+                    "description":"Считать значение из EEPROM",
+                    "categories":["CMD","DEBUG"]
+                },
+                {
+                    "name":"cmdReBoot",
+                    "addr":"0x08",
+                    "count":1,
+                    "title":"Reboot STM32",
+                    "description":"Перезагрузить STM32",
+                    "categories":["CMD","DEBUG"]
+                },
+                {
+                    "name":"cmdWriteRTC",
+                    "addr":"0x09",
+                    "count":1,
+                    "title":"Write value to RTC",
+                    "description":"Установить ЧРВ STM32",
+                    "categories":["CMD","CFG"]
+                },
+                {
+                    "name":"setOTPLED",
+                    "addr":"0x0A",
+                    "count":1,
+                    "title":"Set OverTemp LED",
+                    "description":"Выставить Перезагрузить STM32",
+                    "categories":["CMD","DEBUG"]
+                }
+            ],
+            "holdingRegisters":[
+                {
+                    "name":"setRunMode",
+                    "addr":"0x00",
+                    "count":1,
+                    "title":"Set uC run mode",
+                    "description":"Задать режим рпботы МК",
+                    "categories":["CFG","ANY"]
+                },
+                {
+                    "name":"setTempVal",
+                    "addr":"0x01",
+                    "count":1,
+                    "title":"TEC temper setpoint, Deg C *10 ",
+                    "description":"Уставка температуры Пельтье, град С * 10",
+                    "categories":["CFG","ANY","TEMPER"]
+                },
+                {
+                    "name":"setTempADC",
+                    "addr":"0x02",
+                    "count":1,
+                    "title":"TEC temper setpoint, ADC",
+                    "description":"Уставка температуры Пельтье, ед АЦП",
+                    "categories":["CFG","ANY","ADC","TEMPER"]
+                },
+                {
+                    "name":"setStillTempDeltaVal",
+                    "addr":"0x03",
+                    "count":1,
+                    "title":"Delta T as stable result, deg C *100",
+                    "description":"Дельта, когда считать Температуру стабильной, град С*100",
+                    "categories":["CFG","ANY","VALUE","TEMPER"]
+                },
+                {
+                    "name":"setStillTempDeltaADC",
+                    "addr":"0x04",
+                    "count":1,
+                    "title":"Delta T as stable result, ADC",
+                    "description":"Дельта, когда считать Температуру стабильной, ед АЦП",
+                    "categories":["CFG","ANY","ADC","TEMPER"]
+                },
+                {
+                    "name":"setHeatingVelosity",
+                    "addr":"0x05",
+                    "count":1,
+                    "title":"Heating Velocity degC*100/sec",
+                    "description":"Скорость нагрева",
+                    "categories":["CFG","ANY","VALUE","TEMPER"]
+                },
+                {
+                    "name":"setCoolingVelosity",
+                    "addr":"0x06",
+                    "count":1,
+                    "title":"Cooling Velocity degC*100/sec",
+                    "description":"Скорость охлаждения",
+                    "categories":["CFG","ANY","VALUE","TEMPER"]
+                },
+                {
+                    "name":"setTemperPollFreq",
+                    "addr":"0x07",
+                    "count":1,
+                    "title":"Temp ADC pooling frequency, Hz*10",
+                    "description":"Частота опроса АЦП",
+                    "categories":["CFG","ANY","TEMPER"]
+                },
+                {
+                    "name":"setTemperAveCnt",
+                    "addr":"0x08",
+                    "count":1,
+                    "title":"Running ave filter Width",
+                    "description":"Ширина фильтра бегущего среднего для температур",
+                    "categories":["CFG","ANY","TEMPER"]
+                },
+                {
+                    "name":"setPWMDuty",
+                    "addr":"0x09",
+                    "count":1,
+                    "title":"Set PWM Duty Cycle, %*10",
+                    "description":"Заполненость ШИМ, %*10",
+                    "categories":["CFG","ANY","TEC"]
+                },
+                {
+                    "name":"setPWMFreq",
+                    "addr":"0x0A",
+                    "count":1,
+                    "title":"Set PWM Frequency, kHz",
+                    "description":"Опорная частота ШИМ, кГц",
+                    "categories":["CFG","ANY","TEC"]
+                },
+                {
+                    "name":"setCTMPeriod",
+                    "addr":"0x0B",
+                    "count":1,
+                    "title":"Core Temperature Measurement period, sec",
+                    "description":"Период измерения Т Core, сек",
+                    "categories":["CFG","PROD","TEMPER"]
+                },
+                {
+                    "name":"setMCMPeriod",
+                    "addr":"0x0C",
+                    "count":1,
+                    "title":"Micro Circ Temperature Measurement period, sec",
+                    "description":"Период измерения Микроциркуляции, сек",
+                    "categories":["CFG","PROD","TEMPER"]
+                },
+                {
+                    "name":"setPIDControlFreq",
+                    "addr":"0x0E",
+                    "count":1,
+                    "title":"PID goes in action frequency, Hz",
+                    "description":"Частота управления ПИД регулятором",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDPNom",
+                    "addr":"0x10",
+                    "count":1,
+                    "title":"Heating PID Prop coeff nomerator",
+                    "description":"Пропорциональный коэф ПИД Kp = (setHeatPIDPNom/setHeatPIDPDenom). Числитель.",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDPDenom",
+                    "addr":"0x11",
+                    "count":1,
+                    "title":"Heating PID Prop coeff denomerator",
+                    "description":"Пропорциональный коэф ПИД Kp = (setHeatPIDPNom/setHeatPIDPDenom). Знаменатель.",
+                    "category":["CFG","ANY"]
+                },             
+                {
+                    "name":"setHeatPIDINom",
+                    "addr":"0x12",
+                    "count":1,
+                    "title":"Heating PID Integral coeff nomerator",
+                    "description":"Интегральный коэф ПИД Ki = (setHeatPIDINom/setHeatPIDIDenom). Числитель.",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDIDenom",
+                    "addr":"0x13",
+                    "count":1,
+                    "title":"Heating PID Integral coeff denomerator",
+                    "description":"Интегральный коэф ПИД Ki = (setHeatPIDINom/setHeatPIDIDenom). Знаменатель.",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDITime",
+                    "addr":"0x14",
+                    "count":1,
+                    "title":"Heating PID Integral delta Time",
+                    "description":"Время интегрирования ПИД. Усредненных отсчетов Т",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDDNom",
+                    "addr":"0x15",
+                    "count":1,
+                    "title":"Heating PID Diff coeff nomerator",
+                    "description":"Дифференциальный коэф ПИД Kd = (setHeatPIDDNom/setHeatPIDDDenom). Числитель.",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setHeatPIDDDenom",
+                    "addr":"0x16",
+                    "count":1,
+                    "title":"Heating PID Diff coeff denomerator",
+                    "description":"Дифференциальный коэф ПИД Kd = (setHeatPIDDNom/setHeatPIDDDenom). Знаменатель.",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECVloltK",
+                    "addr":"0x20",
+                    "count":1,
+                    "title":"TECVoltage = (TECVoltADC*TECVoltK+TECVoltB)/TECVoltDev",
+                    "description":"Коэффициент пропроциональности К для напряжения",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECVloltB",
+                    "addr":"0x21",
+                    "count":1,
+                    "title":"TECVoltage = (TECVoltADC*TECVoltK+TECVoltB)/TECVoltDev",
+                    "description":"Коэффициент пропроциональности B для напряжения",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECVloltDev",
+                    "addr":"0x22",
+                    "count":1,
+                    "title":"TECVoltage = (TECVoltADC*TECVoltK+TECVoltB)/TECVoltDev",
+                    "description":"Делитель Dev для напряжения",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECCurrentK",
+                    "addr":"0x23",
+                    "count":1,
+                    "title":"TECCurrent = (tecCurrentAdc*tecCurrentK+tecCurrentB)/tecCurrentDev",
+                    "description":"Коэффициент пропроциональности К для тока",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECCurrentB",
+                    "addr":"0x24",
+                    "count":1,
+                    "title":"TECCurrent = (tecCurrentAdc*tecCurrentK+tecCurrentB)/tecCurrentDev",
+                    "description":"Коэффициент пропроциональности B для тока",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setTECCurrentDev",
+                    "addr":"0x25",
+                    "count":1,
+                    "title":"TECCurrent = (tecCurrentAdc*tecCurrentK+tecCurrentB)/tecCurrentDev",
+                    "description":"Делитель Dev для тока",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setRTCLo",
+                    "addr":"0x2B",
+                    "count":1,
+                    "title":"Set Up RTC Value (lo)",
+                    "description":"Установка RTC в STM32",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"setRTCHi",
+                    "addr":"0x2C",
+                    "count":1,
+                    "title":"Set Up RTC Value (hi)",
+                    "description":"Установка RTC в STM32",
+                    "category":["CFG","ANY"]
+                },
+                {
+                    "name":"EEPROMAddrLo",
+                    "addr":"0x2D",
+                    "count":1,
+                    "title":"EEPROM address,lo",
+                    "description":"EEPROM address,lo",
+                    "category":["CFG","DEBUG"]
+                },
+                {
+                    "name":"EEPROMAddrHi",
+                    "addr":"0x2E",
+                    "count":1,
+                    "title":"EEPROM address,hi",
+                    "description":"EEPROM address,hi",
+                    "category":["CFG","DEBUG"]
+                },
+                {
+                    "name":"EEPROMData",
+                    "addr":"0x2F",
+                    "count":1,
+                    "title":"EEPROM data",
+                    "description":"EEPROM data",
+                    "category":["CFG","DEBUG"]
+                }
+            ],
+            "dataSets":[
+                {
+                    "name":"TempVals",
+                    "dataSource":"INPUTREGISTERS",
+                    "addr":"0x16",
+                    "count":10,
+                    "title":"All temperature values in grad C + TimeStamp",
+                    "description":"" ,
+                    "categories":["PROD","VALUE"]                    
+                },
+                {
+                    "name":"TempADCs",
+                    "dataSource":"INPUTREGISTERS",
+                    "addr":"0x16",
+                    "count":10,
+                    "title":"TimeStamp + All temperature in ADCs",
+                    "description":"" ,
+                    "categories":["DEBUG","ADC"]
+                }
+            ]
+        }
+    }
+}
