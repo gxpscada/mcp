@@ -77,6 +77,70 @@
         "data":{
             "inputRegisters":[
                 {
+                    "name":"tssT0",
+                    "addr":"0x09",
+                    "count":1,
+                    "title":"Temp Sensor State: T0",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT1",
+                    "addr":"0x0A",
+                    "count":1,
+                    "title":"Temp Sensor State: T1",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT2",
+                    "addr":"0x0B",
+                    "count":1,
+                    "title":"Temp Sensor State: T2",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT3",
+                    "addr":"0x0C",
+                    "count":1,
+                    "title":"Temp Sensor State: T3",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT4",
+                    "addr":"0x0D",
+                    "count":1,
+                    "title":"Temp Sensor State: T4",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT5",
+                    "addr":"0x0E",
+                    "count":1,
+                    "title":"Temp Sensor State: T5",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT6",
+                    "addr":"0x0F",
+                    "count":1,
+                    "title":"Temp Sensor State: T6",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
+                    "name":"tssT7",
+                    "addr":"0x10",
+                    "count":1,
+                    "title":"Temp Sensor State: T7",
+                    "description":"Состояние датчика Т. см. лист Статус Датчика Т",
+                    "categories":["FLAG","ANY","ERROR"]
+                },
+                {
                     "name":"TECVloltVal",
                     "addr":"0x11",
                     "count":1,

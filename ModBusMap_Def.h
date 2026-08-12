@@ -1,27 +1,27 @@
 // Device ModBus protocol MAP
 
 // Discrete Inputs (RO)
-#define mbdi_flagOverLoad 			0x00
-#define mbdi_flagOverHeat 			0x01
-#define mbdi_flagHeating  			0x02
-#define mbdi_flagCooling  			0x03
-#define mbdi_flagRunning  			0x04
-#define mbdi_flagError	  			0x05
-#define mbdi_flagPIDOverRegulated	0x05
-#define mbdi_flagPIDUnderRegulated	0x06
+#define mbdi_flagOverLoad 			0x00 // Перегрузка Пельтье по току (OCP_F)
+#define mbdi_flagOverHeat 			0x01 // Перегрев радиатора (OTP_F)
+#define mbdi_flagHeating  			0x02 // Нагрев Пельтье (MON_VP+ - MON_VP-)
+#define mbdi_flagCooling  			0x03 // Индикатор охлаждения (Mon_VP-  MON_VP+)
+#define mbdi_flagRunning  			0x04 // Прибор выполняет программу
+#define mbdi_flagError	  			0x05 // Возникла ошибка
+#define mbdi_flagPIDOverRegulated	0x05 // Если расчетное значение воздействие пришлось сократить до максимально аппаратно возможного
+#define mbdi_flagPIDUnderRegulated	0x06 // Если расчетное значение воздействие пришлось увеличить до минимально аппаратно возможного
 
 // Input Registers (RO)
-#define mbir_runPhase				0x00
-#define mbir_RunTimeLo				0x01
-#define mbir_RunTimeHi				0x02
-#define mbir_tssT0					0x09 //Temp Sensor State: T0 (см. лист Статус Датчика Т)
-#define mbir_tssT1					0x0A
-#define mbir_tssT2					0x0B
-#define mbir_tssT3					0x0C
-#define mbir_tssT4					0x0D
-#define mbir_tssT5					0x0E
-#define mbir_tssT6					0x0F
-#define mbir_tssT7					0x10
+#define mbir_runPhase				0x00 // Фаза программы. См. лист "Фазы работы"
+#define mbir_RunTimeLo				0x01 // Время, прошедшее с Комманды Run. Lo
+#define mbir_RunTimeHi				0x02 // Время, прошедшее с Комманды Run. Hi
+#define mbir_tssT0					0x09 // Temp Sensor State: T0 (см. лист Статус Датчика Т)
+#define mbir_tssT1					0x0A //
+#define mbir_tssT2					0x0B //
+#define mbir_tssT3					0x0C //
+#define mbir_tssT4					0x0D //
+#define mbir_tssT5					0x0E //
+#define mbir_tssT6					0x0F //
+#define mbir_tssT7					0x10 //
 
 #define mbir_TECVoltVal				0x11 // Напряжение на эл-те Пельтье, mV
 #define mbir_TECCurrVal				0x12 // Ток через эл-т Пельтье, mA
